@@ -1,0 +1,2375 @@
+# FINAL MASTER DEVELOPMENT PROMPT
+
+# Complete Grocery E-commerce, Inventory, Delivery & Business Management ERP System
+
+**Project Type:** Full-Scale Grocery E-commerce + Business Management ERP + Android Application
+
+**Development Approach:** Core PHP / Raw PHP, Modular Architecture, Secure, Scalable, API-First.
+
+---
+
+# PART 1: PROJECT VISION & OBJECTIVES
+
+I want to build a complete Grocery E-commerce and Business Management System for my local business in Bangladesh.
+
+This is not just an ordinary online grocery store. It must be a complete business ecosystem that allows me to manage the entire business from a centralized system.
+
+My business model:
+
+1. Purchase fresh vegetables and fruits directly from farmers and local markets.
+2. Purchase grocery and household products from dealers, distributors and suppliers.
+3. Receive purchased products at my warehouse.
+4. Inspect, sort, weigh and package products.
+5. Calculate actual purchase costs, transportation costs, packaging costs and other expenses.
+6. Set selling prices, discounts and profit margins.
+7. Publish products on the customer-facing e-commerce website.
+8. Receive orders online and through delivery representatives.
+9. Manage order processing, inventory and delivery operations.
+10. Collect customer payments through Cash on Delivery.
+11. Manage delivery staff, managers, employees and accountants.
+12. Maintain complete financial records.
+13. Manage investor loans, profit-sharing investments and withdrawals.
+14. Visualize business performance through professional dashboards and reports.
+
+Initially, the business will operate in one Upazila in Bangladesh.
+
+However, the system architecture must support future expansion to multiple Upazilas, warehouses, outlets and business locations without requiring a complete system redesign.
+
+The entire application must be developed using Core PHP / Raw PHP without Laravel or any other PHP framework.
+
+The code must be clean, understandable, modular, maintainable and suitable for real commercial operations.
+
+# PART 2: TECHNOLOGY STACK
+
+Use the following technology stack.
+
+## 2.1 Backend
+
+- Core PHP / Raw PHP.
+- PHP 8.2 or newer.
+- MySQL 8 or compatible MariaDB.
+- PDO for all database operations.
+- Object-Oriented PHP (OOP).
+- Custom MVC-like architecture.
+- Native PHP sessions for web authentication.
+- Custom secure token authentication for REST APIs.
+- MySQL transactions for financial and inventory operations.
+
+## 2.2 Frontend
+
+- HTML5.
+- CSS3.
+- Bootstrap 5.
+- Vanilla JavaScript.
+- Chart.js.
+- Font Awesome.
+- AJAX only where genuinely necessary.
+
+## 2.3 Development Environment
+
+The initial development environment will be:
+
+- Windows 10.
+- XAMPP.
+- Apache.
+- PHP.
+- MySQL / MariaDB.
+- phpMyAdmin.
+- Visual Studio Code.
+
+The application must be compatible with XAMPP for local development and standard Apache hosting or VPS environments for production.
+
+## 2.4 Strict Technology Rules
+
+1. Do NOT use Laravel.
+2. Do NOT use Symfony.
+3. Do NOT use CodeIgniter.
+4. Do NOT use WordPress.
+5. Do NOT use any other PHP framework.
+6. Do NOT use Node.js as the backend.
+7. Do NOT use React, Vue or Angular for the main frontend.
+8. Do NOT use unnecessary JavaScript.
+9. Do NOT put business calculations in JavaScript.
+10. Use PDO prepared statements for all database queries involving dynamic values.
+11. Use PHP OOP and reusable classes.
+12. Use PHP for all business logic and calculations.
+13. Use MySQL transactions for operations involving multiple related database changes.
+14. Use reusable components for headers, footers, sidebars, navigation and layouts.
+15. Keep the code understandable for a developer who knows Core PHP, OOP, PDO and MySQL.
+16. Do not introduce unnecessary advanced technologies that make the project difficult to maintain.
+
+## 2.5 Composer Policy
+
+The application must not depend on a PHP framework.
+
+Prefer native PHP functionality.
+
+Composer packages may be used only when genuinely necessary for tasks such as:
+
+- PDF generation.
+- Excel export.
+- Email.
+- Barcode generation.
+- API documentation.
+
+Before adding any Composer package:
+
+1. Explain why it is needed.
+2. Explain what it does.
+3. Show the installation command.
+4. Explain how it will be used.
+
+Do not add unnecessary dependencies.
+
+# PART 3: APPLICATION ARCHITECTURE
+
+Create a professional custom PHP architecture.
+
+Use a modular structure with separation between:
+
+- Configuration.
+- Database connection.
+- Models.
+- Controllers.
+- Services.
+- Middleware.
+- Routes.
+- Views.
+- Helpers.
+- API.
+- Public assets.
+- Storage.
+- Logs.
+
+Recommended initial directory structure:
+
+```text
+grocery-erp/
+│
+├── app/
+│   ├── Config/
+│   │   ├── app.php
+│   │   └── database.php
+│   │
+│   ├── Core/
+│   │   ├── Database.php
+│   │   ├── Router.php
+│   │   ├── Controller.php
+│   │   ├── Model.php
+│   │   ├── Request.php
+│   │   ├── Response.php
+│   │   ├── Session.php
+│   │   ├── Auth.php
+│   │   ├── Validator.php
+│   │   └── CSRF.php
+│   │
+│   ├── Middleware/
+│   │   ├── AuthMiddleware.php
+│   │   ├── RoleMiddleware.php
+│   │   └── PermissionMiddleware.php
+│   │
+│   ├── Helpers/
+│   │   ├── functions.php
+│   │   ├── url.php
+│   │   └── formatting.php
+│   │
+│   ├── Models/
+│   ├── Controllers/
+│   ├── Services/
+│   └── Modules/
+│       ├── Products/
+│       ├── Customers/
+│       ├── Suppliers/
+│       ├── Purchases/
+│       ├── Inventory/
+│       ├── Orders/
+│       ├── Delivery/
+│       ├── Accounting/
+│       ├── Investors/
+│       ├── Employees/
+│       └── Reports/
+│
+├── routes/
+│   ├── web.php
+│   └── api.php
+│
+├── database/
+│   ├── migrations/
+│   ├── seeds/
+│   └── schema.sql
+│
+├── resources/
+│   └── views/
+│       ├── layouts/
+│       ├── components/
+│       ├── frontend/
+│       ├── admin/
+│       ├── manager/
+│       ├── warehouse/
+│       ├── delivery/
+│       ├── accountant/
+│       └── investor/
+│
+├── public/
+│   ├── index.php
+│   ├── .htaccess
+│   └── assets/
+│       ├── css/
+│       ├── js/
+│       ├── images/
+│       └── uploads/
+│
+├── storage/
+│   ├── logs/
+│   ├── invoices/
+│   ├── exports/
+│   └── backups/
+│
+├── api/
+│   └── v1/
+│
+├── config/
+├── scripts/
+├── tests/
+├── .env
+├── .env.example
+├── .gitignore
+└── README.md
+```
+
+This is the proposed architecture. You may improve it if a better structure is justified.
+
+Important architecture rules:
+
+1. Use a single public entry point through `public/index.php`.
+2. Implement a custom lightweight router.
+3. Use reusable controllers and service classes.
+4. Keep database queries out of view files.
+5. Keep business logic out of HTML templates.
+6. Keep database credentials outside publicly accessible directories.
+7. Use configuration files and environment variables.
+8. Use a centralized PDO database connection.
+9. Use reusable validation and authorization systems.
+10. Use a centralized error-handling mechanism.
+11. Keep API routes separate from web routes.
+12. Do not expose internal application files through the browser.
+13. Implement clean URL routing through Apache `.htaccess`.
+14. Support future multiple warehouses and outlets.
+15. Use modular architecture so new modules can be added without rewriting existing modules.
+
+# PART 4: COMPLETE SYSTEM MODULES
+
+The system must contain the following modules:
+
+1. Public E-commerce Website.
+2. Customer Account Management.
+3. Product and Category Management.
+4. Supplier Management.
+5. Purchase Management.
+6. Warehouse Management.
+7. Inventory Management.
+8. Fresh Vegetable and Fruit Weight Management.
+9. Product Costing and Pricing.
+10. Order Management.
+11. Delivery Management.
+12. Delivery Man Marketing and Direct Order System.
+13. Delivery Zone and Charge Management.
+14. Payment Collection Management.
+15. Cash Handover Management.
+16. Manager Panel.
+17. Employee Management.
+18. Attendance and Salary Management.
+19. Accounting and Financial Management.
+20. Investor Management.
+21. Loan Management.
+22. Profit-Sharing Investment Management.
+23. Expense Management.
+24. Return and Refund Management.
+25. Barcode and Invoice Management.
+26. Offer and Combo Management.
+27. Blog Management.
+28. Outlet Management.
+29. Notification Management.
+30. Business Analytics and Reporting.
+31. REST API Management.
+32. GTM and GA4 Integration.
+33. Android Application Integration.
+34. Security and Audit Management.
+
+# PART 5: PUBLIC E-COMMERCE WEBSITE
+
+Create a premium, modern, attractive and mobile-first grocery e-commerce website.
+
+## 5.1 Homepage
+
+Required sections:
+
+- Announcement Bar.
+- Header and Logo.
+- Product Search.
+- Location Selector.
+- Customer Account.
+- Wishlist.
+- Shopping Cart.
+- Main Navigation.
+- Hero Banners.
+- Shop by Category.
+- Today's Offers.
+- Fresh Vegetables.
+- Fresh Fruits.
+- Grocery Essentials.
+- Popular Products.
+- Best Selling Products.
+- Seasonal Products.
+- Combo Packages.
+- Recommended Products.
+- Latest Blog Posts.
+- Outlet Information.
+- Customer Reviews.
+- About Us.
+- Contact Information.
+- Footer.
+
+All homepage sections must be manageable through the Admin Panel.
+
+## 5.2 Product Categories
+
+Create a dynamic hierarchical category and subcategory management system.
+
+Initial categories:
+
+**Vegetables**
+- Fresh Vegetables.
+- Seasonal Vegetables.
+- Winter Vegetables.
+- Leafy Vegetables.
+- Local Vegetables.
+
+**Fruits**
+- Local Fruits.
+- Seasonal Fruits.
+- Imported Fruits.
+
+**Eggs and Dairy**
+- Chicken Eggs.
+- Duck Eggs.
+- Milk.
+- Dairy Products.
+
+**Fish and Meat**
+- Fresh Fish.
+- Farmed Fish.
+- Chicken.
+- Beef.
+- Mutton.
+
+**Grocery**
+- Rice.
+- Lentils.
+- Chickpeas.
+- Flour.
+- Sugar.
+- Salt.
+
+**Nuts and Dry Fruits**
+- Peanuts.
+- Almonds.
+- Cashews.
+- Raisins.
+- Mixed Nuts.
+
+**Traditional Foods**
+- Date Palm Jaggery.
+- Date Palm Liquid Jaggery.
+- Sugarcane Jaggery.
+- Traditional Food Products.
+
+**Cooking Oil**
+- Soybean Oil.
+- Mustard Oil.
+- Coconut Oil.
+
+**Spices**
+- Chili Powder.
+- Turmeric Powder.
+- Coriander Powder.
+- Cumin.
+- Other Spices.
+
+**Household**
+- Soap.
+- Detergent.
+- Dishwashing Products.
+- Cleaning Products.
+
+**Personal Care**
+- Shampoo.
+- Hair Oil.
+- Body Soap.
+- Personal Care Essentials.
+
+**Combo Packages**
+- Kitchen Combo.
+- Family Grocery Combo.
+- Breakfast Combo.
+- Healthy Food Combo.
+
+Admin must be able to create, update, delete, disable and reorder categories and subcategories.
+
+Do not hardcode categories.
+
+## 5.3 Product Details
+
+Every product must support:
+
+- Product Name.
+- Product Slug.
+- SKU.
+- Barcode.
+- Brand.
+- Category.
+- Subcategory.
+- Product Images.
+- Product Gallery.
+- Short Description.
+- Full Description.
+- Product Unit.
+- Weight.
+- Product Origin.
+- Manufacturer.
+- Regular Price.
+- Discount Price.
+- Discount Percentage.
+- Available Stock.
+- Product Highlights.
+- Expiry Information.
+- Customer Reviews.
+- Ratings.
+- Related Products.
+- Add to Cart.
+- Buy Now.
+- Wishlist.
+
+Supported units:
+
+- KG.
+- Gram.
+- Liter.
+- ML.
+- Piece.
+- Packet.
+- Dozen.
+- Box.
+- Custom Units.
+
+Support products sold by weight and fractional quantities where appropriate.
+
+## 5.4 Cart and Checkout
+
+Implement:
+
+- Add to Cart.
+- Update Quantity.
+- Remove Product.
+- Apply Coupon.
+- Calculate Subtotal.
+- Calculate Discount.
+- Calculate Delivery Charge.
+- Calculate Grand Total.
+- Guest Checkout.
+- Registered Customer Checkout.
+- Cash on Delivery.
+
+Customers must be able to place orders without creating accounts.
+
+Guest checkout fields:
+
+- Customer Name.
+- Phone Number.
+- Alternative Phone Number.
+- District.
+- Upazila.
+- Union.
+- Area.
+- Full Address.
+- Delivery Instructions.
+- Order Notes.
+
+Customer account features:
+
+- Dashboard.
+- Profile.
+- Address Book.
+- Order History.
+- Order Tracking.
+- Wishlist.
+- Reorder.
+- Password Management.
+
+Guest customers must be able to track orders using Order ID and verified phone information.
+
+## 5.5 Offers and Combo Packages
+
+Support:
+
+- Percentage Discounts.
+- Fixed Discounts.
+- Product Discounts.
+- Category Discounts.
+- Coupon Codes.
+- Buy One Get One.
+- Limited-Time Offers.
+- Seasonal Campaigns.
+- Combo Packages.
+
+Combo product inventory must be calculated using its component products.
+
+Prevent duplicate stock deduction when combo products and individual products are sold together.
+
+## 5.6 Blog and SEO
+
+Create a professional Blog Management System.
+
+Features:
+
+- Blog Categories.
+- Blog Posts.
+- Featured Images.
+- SEO Titles.
+- Meta Descriptions.
+- SEO-friendly Slugs.
+- Keywords.
+- Related Products.
+- Draft and Publish.
+- Sitemap.
+- Robots.txt.
+- Canonical URLs.
+- Open Graph Metadata.
+
+---
+
+# PART 6: SUPPLIER AND PURCHASE MANAGEMENT
+
+My business purchases products from two major sources:
+
+1. Farmers and local agricultural producers.
+2. Dealers, distributors and manufacturers.
+
+Create a comprehensive supplier management system.
+
+## 6.1 Supplier Types
+
+- Farmer.
+- Local Producer.
+- Dealer.
+- Distributor.
+- Manufacturer.
+- Wholesaler.
+- Other.
+
+Supplier profile:
+
+- Supplier ID.
+- Name.
+- Phone.
+- Alternative Phone.
+- Address.
+- Supplier Type.
+- Supplied Products.
+- Previous Purchases.
+- Total Purchase Amount.
+- Total Paid.
+- Outstanding Due.
+- Payment History.
+- Purchase History.
+
+## 6.2 Purchase Management
+
+Purchase workflow:
+
+1. Create Purchase Request.
+2. Select Supplier.
+3. Select Products.
+4. Enter Purchase Quantity.
+5. Enter Purchase Price.
+6. Add Transportation Cost.
+7. Add Loading and Unloading Cost.
+8. Add Other Costs.
+9. Select Warehouse.
+10. Create Purchase Order.
+11. Receive Products.
+12. Perform Quality Inspection.
+13. Record Accepted Quantity.
+14. Record Rejected Quantity.
+15. Record Damaged Quantity.
+16. Confirm Goods Receipt.
+17. Update Inventory.
+18. Record Supplier Payment.
+
+Each purchase must record:
+
+- Purchase ID.
+- Supplier ID.
+- Warehouse ID.
+- Purchase Manager ID.
+- Purchase Date.
+- Product Details.
+- Purchase Quantity.
+- Purchase Price.
+- Additional Expenses.
+- Receiving Information.
+- Batch Number.
+- Payment Information.
+
+Record which manager arranged or supplied each product and when it was supplied.
+
+---
+
+# PART 7: FRESH VEGETABLE AND FRUIT WEIGHT MANAGEMENT
+
+This is a mandatory and very important module.
+
+Fresh vegetables and fruits often have differences between purchased weight and sellable weight.
+
+Example:
+
+Purchased potatoes: 50 KG.
+
+After sorting:
+
+- Purchased Quantity: 50 KG.
+- Accepted Quantity: 50 KG.
+- Sorting Loss: 2 KG.
+- Sellable Quantity: 48 KG.
+- Sold Quantity: 40 KG.
+- Remaining Stock: 8 KG.
+
+Maintain separate quantities for:
+
+1. Purchased Weight.
+2. Received Weight.
+3. Accepted Weight.
+4. Rejected Weight.
+5. Sorting Loss.
+6. Damaged Weight.
+7. Sellable Weight.
+8. Sold Weight.
+9. Remaining Weight.
+
+Required features:
+
+- Purchase Weight Entry.
+- Digital Scale Weight Entry.
+- Sorting Entry.
+- Quality Inspection.
+- Rejected Product Entry.
+- Damage Entry.
+- Sellable Stock Calculation.
+- Weight Adjustment.
+- Stock Reconciliation.
+- Sorting Loss Reports.
+- Product-wise Loss Percentage.
+- Supplier-wise Quality Reports.
+
+Every weight adjustment must record the responsible employee, timestamp and reason.
+
+Do not treat normal sorting loss as a customer sale.
+
+Separate operational loss from damaged stock and expired stock.
+
+For vegetables and fruits, support both KG and fractional KG sales.
+
+Calculate actual landed cost based on accepted and sellable quantities, while maintaining all purchase and loss records.
+
+Example: If 50 KG costs ৳1,000 and only 48 KG becomes sellable, the sellable cost basis must reflect the actual purchase and handling costs attributable to that batch.
+
+Do not deduct sorting loss twice.
+
+---
+
+# PART 8: PRODUCT COSTING AND PRICING
+
+Every product must have a complete cost calculation system.
+
+Cost components:
+
+- Purchase Cost.
+- Transportation Cost.
+- Loading Cost.
+- Unloading Cost.
+- Packaging Cost.
+- Sorting Cost.
+- Storage Cost.
+- Other Costs.
+
+Formula:
+
+Total Landed Cost = Purchase Cost + Allocated Additional Costs.
+
+For perishable products, calculate the effective cost of sellable inventory after attributable sorting and handling losses.
+
+Support:
+
+- Batch-wise Cost.
+- FIFO Costing.
+- Weighted Average Costing.
+- Selling Price.
+- Discount Price.
+- Expected Profit.
+- Gross Profit.
+- Gross Margin.
+- Markup.
+- Minimum Selling Price.
+
+Example:
+
+Purchase Price = ৳100.
+
+Transportation = ৳5.
+
+Packaging = ৳4.
+
+Other Expenses = ৳2.
+
+Total Cost = ৳111.
+
+Selling Price = ৳140.
+
+Gross Profit = ৳29.
+
+Gross Margin = 20.71%.
+
+Net Profit must be calculated separately after applicable operational expenses.
+
+All calculations must be performed on the PHP backend.
+
+Historical order costs must remain unchanged.
+
+---
+
+# PART 9: WAREHOUSE MANAGEMENT
+
+Create a professional Warehouse Management System.
+
+Features:
+
+- Multiple Warehouses.
+- Warehouse Dashboard.
+- Product Receiving.
+- Stock Management.
+- Batch Management.
+- Stock Transfers.
+- Stock Adjustments.
+- Stock Reservations.
+- Stock Audits.
+- Damaged Stock.
+- Expired Stock.
+- Near Expiry Alerts.
+- Low Stock Alerts.
+- Inventory Valuation.
+- Stock Movement History.
+- Purchase Receiving History.
+- Return Receiving.
+- Warehouse-wise Reports.
+
+Stock must never be modified directly.
+
+Every stock change must create an auditable stock movement.
+
+## 9.1 Expiry and Perishable Management
+
+Support:
+
+- Expiry Date Tracking.
+- Batch Expiry Alerts.
+- Near Expiry Products.
+- FIFO Stock Issuing.
+- FEFO support where appropriate.
+- Discounted Clearance Sales.
+- Damaged Stock.
+- Expired Stock Write-off.
+- Expiry Reports.
+
+Prevent expired products from being sold.
+
+Allow authorized users to create clearance discounts for products approaching expiry.
+
+## 9.2 Multiple Warehouse and Outlet Support
+
+The system must support multiple business locations.
+
+Every warehouse and outlet must have:
+
+- Unique ID.
+- Name.
+- Address.
+- Location.
+- Manager.
+- Contact Details.
+- Operating Status.
+- Associated Inventory.
+- Sales Records.
+- Purchase Records.
+- Expenses.
+- Financial Reports.
+
+Central Admin can see all locations.
+
+Managers can access only authorized locations.
+
+Support stock transfers between warehouses with transfer requests, dispatch confirmation and receiving confirmation.
+
+Do not duplicate inventory when stock is transferred.
+
+---
+
+# PART 10: DELIVERY ZONE AND DELIVERY CHARGE MANAGEMENT
+
+Create a dynamic delivery area management system.
+
+Support:
+
+- District.
+- Upazila.
+- Union.
+- Village.
+- Area.
+- Custom Delivery Zone.
+
+Admin must be able to define:
+
+- Delivery Charge.
+- Minimum Order Amount.
+- Free Delivery Threshold.
+- Same-Day Delivery Availability.
+- Emergency Delivery Charge.
+- Delivery Time Slots.
+- Estimated Delivery Time.
+- Zone Availability.
+- Order Cut-off Time.
+
+Delivery charges must be calculated on the backend.
+
+Delivery charges should be configurable for different areas.
+
+Support future multi-outlet delivery assignment.
+
+---
+
+# PART 11: ORDER MANAGEMENT
+
+Create a centralized Order Management System.
+
+Order sources:
+
+- Website Customer.
+- Delivery Man.
+- Admin.
+- Authorized Manager.
+
+Every order must record its source and creator.
+
+Order information:
+
+- Order ID.
+- Customer Details.
+- Products.
+- Quantity.
+- Product Prices.
+- Purchase Cost Snapshot.
+- Discounts.
+- Delivery Charge.
+- Grand Total.
+- Order Source.
+- Delivery Man ID.
+- Warehouse ID.
+- Outlet ID.
+- Created By.
+- Order Date.
+- Payment Status.
+- Delivery Status.
+
+Order statuses:
+
+1. Pending.
+2. Confirmed.
+3. Processing.
+4. Packing.
+5. Assigned.
+6. Out for Delivery.
+7. Delivered.
+8. Completed.
+
+Payment statuses:
+
+1. Unpaid.
+2. Pending Collection.
+3. Partially Paid.
+4. Paid.
+5. Refunded.
+6. Partially Refunded.
+
+Additional order statuses:
+
+- Cancelled.
+- Failed Delivery.
+- Partially Delivered.
+- Return Requested.
+- Returned.
+
+Maintain full order status history.
+
+Prevent unauthorized order modifications.
+
+Delivery status and payment status must remain separate.
+
+---
+
+# PART 12: DELIVERY MAN PANEL
+
+Every delivery man must have an individual account.
+
+Dashboard:
+
+- Today's Assigned Orders.
+- Pending Orders.
+- Completed Deliveries.
+- Failed Deliveries.
+- Cancelled Orders.
+- Monthly Delivery Count.
+- Monthly Sales.
+- Commission Earned.
+- Salary Summary.
+- Payment Collection Pending.
+- Cash Collected.
+- Customer Acquisition.
+- Performance Ranking.
+
+Delivery men must be able to see their assigned orders and their own customers.
+
+## 12.1 Delivery Man Marketing and Direct Orders
+
+This is a mandatory feature.
+
+Delivery men must be able to generate new orders by personally marketing the products.
+
+Provide a Create Customer Order form.
+
+Fields:
+
+- Customer Name.
+- Mobile Number.
+- Alternative Number.
+- Delivery Address.
+- Area.
+- Product Selection.
+- Quantity.
+- Selling Price.
+- Authorized Discount.
+- Delivery Charge.
+- Order Notes.
+
+Each order must automatically record:
+
+- Order Source = delivery_man.
+- Delivery Man ID.
+- Creator ID.
+- Creation Date.
+- Customer Details.
+- Products.
+- Total Amount.
+
+Admin must be able to identify which orders came directly from the website and which were generated by delivery staff.
+
+Reports:
+
+- Total Orders Created.
+- Completed Orders.
+- Cancelled Orders.
+- Total Customer Acquisition.
+- Total Sales.
+- Gross Profit.
+- Net Profit Attribution.
+- Product-wise Sales.
+- Customer-wise Order History.
+
+Delivery men must not be allowed to modify unauthorized product costs, stock records or financial information.
+
+## 12.2 Delivery Salary and Commission
+
+Use a combined compensation model:
+
+1. Fixed Monthly Salary.
+2. Sales Commission.
+
+Admin can configure:
+
+- Basic Monthly Salary.
+- Commission Percentage.
+- Commission Per Completed Delivery.
+- Product-specific Commission (optional).
+- Monthly Bonus.
+- Performance Incentives.
+- Penalties where legally and contractually appropriate.
+
+Commission must be calculated according to approved business rules.
+
+Important:
+
+- Cancelled orders must not generate commission.
+- Returned orders must follow an approved commission reversal policy.
+- Duplicate commission payments must be prevented.
+- Commission calculations must be auditable.
+
+Create monthly salary and commission statements.
+
+---
+
+# PART 13: PAYMENT COLLECTION AND CASH HANDOVER
+
+The initial customer payment method will be Cash on Delivery.
+
+Keep the architecture ready for future bKash, Nagad and online payment gateway integration.
+
+Payment workflow:
+
+1. Customer places order.
+2. Delivery man receives the order.
+3. Delivery man delivers products.
+4. Delivery status becomes Delivered.
+5. Payment status becomes Pending Collection.
+6. Admin receives a notification.
+7. Admin physically receives cash from the delivery man.
+8. Admin confirms the collected amount.
+9. Admin hands cash to Manager.
+10. Manager confirms receipt.
+11. Further transfers to business or investor accounts are recorded separately.
+
+Each transaction must store:
+
+- Transaction ID.
+- Order ID.
+- Amount.
+- Sender.
+- Receiver.
+- Payment Type.
+- Date.
+- Time.
+- Reference.
+- Approval Status.
+- Evidence Attachment (optional).
+
+Never automatically mark cash as collected just because a delivery man marks an order as delivered.
+
+Implement cash reconciliation and outstanding collection reports.
+
+---
+
+# PART 14: MANAGER PANEL
+
+Manager Dashboard:
+
+- Total Sales.
+- Total Purchases.
+- Gross Profit.
+- Net Profit.
+- Total Expenses.
+- Current Inventory Value.
+- Low Stock.
+- Damaged Stock.
+- Expired Stock.
+- Pending Orders.
+- Completed Orders.
+- Delivery Performance.
+- Supplier Dues.
+- Cash Collection.
+- Cash Handover.
+- Top Selling Products.
+- Top Profitable Products.
+- Most Damaged Products.
+
+Manager responsibilities:
+
+- Supplier Management.
+- Purchase Requests.
+- Purchase Supervision.
+- Warehouse Supervision.
+- Inventory Monitoring.
+- Stock Audit.
+- Damage Reporting.
+- Expiry Monitoring.
+- Delivery Staff Monitoring.
+- Customer Order Monitoring.
+- Payment Collection Supervision.
+- Expense Submission.
+- Daily Business Reporting.
+- Monthly Business Reporting.
+
+All manager activities must be recorded with their ID and timestamps.
+
+Manager access must be controlled by configurable permissions.
+
+---
+
+# PART 15: EMPLOYEE ATTENDANCE AND SALARY
+
+Create a complete Employee Management Module.
+
+Features:
+
+- Employee Profile.
+- Employee ID.
+- Designation.
+- Department.
+- Joining Date.
+- Employment Status.
+- Monthly Salary.
+- Attendance.
+- Daily Attendance.
+- Leave Management.
+- Late Attendance.
+- Salary Advance.
+- Bonus.
+- Deductions.
+- Salary Payments.
+- Salary History.
+
+Attendance can be entered by authorized administrators or managers.
+
+Create monthly attendance and payroll reports.
+
+Prevent unauthorized changes to paid salary records.
+
+---
+
+# PART 16: INVESTOR MANAGEMENT
+
+The investor system must support two separate investment types.
+
+## 16.1 Investment Type A: Loan-Based Investment
+
+An investor may provide a loan to the business.
+
+Store:
+
+- Loan ID.
+- Investor ID.
+- Principal Amount.
+- Loan Date.
+- Agreed Return Terms.
+- Interest or Return Rate, if legally permitted.
+- Repayment Schedule.
+- Due Date.
+- Principal Repaid.
+- Return Paid.
+- Outstanding Principal.
+- Outstanding Return.
+- Loan Status.
+- Agreement Documents.
+
+Loan accounting must distinguish:
+
+- Principal Liability.
+- Return / Financing Expense.
+- Principal Repayment.
+- Return Payment.
+
+Principal repayment must never be recorded as an ordinary business expense.
+
+Any agreed return must be treated according to the actual contract and applicable law.
+
+## 16.2 Investment Type B: Profit-Sharing Investment
+
+An investor may invest business capital under an agreed profit-sharing arrangement.
+
+Store:
+
+- Investment ID.
+- Investor ID.
+- Initial Capital.
+- Additional Capital.
+- Investment Date.
+- Agreement.
+- Profit Sharing Percentage.
+- Capital Withdrawal.
+- Profit Allocation.
+- Profit Distribution.
+- Current Capital.
+- Investment Status.
+
+Profit-sharing calculations must use the approved agreement.
+
+Do not confuse invested capital with earned profit.
+
+## 16.3 Multiple Investors
+
+Support multiple investors.
+
+Every investor must have a separate account.
+
+An investor must be able to see:
+
+- Total Capital Invested.
+- Additional Investment.
+- Total Loan Principal (if applicable).
+- Total Profit Allocated.
+- Profit Withdrawn.
+- Principal Repaid.
+- Remaining Capital.
+- Outstanding Loan.
+- Current Profit Balance.
+- Investment History.
+- Withdrawal History.
+
+Do not expose another investor's private financial information.
+
+## 16.4 Investor Dashboard
+
+Display:
+
+- Total Sales.
+- Total Purchase.
+- Total Expenses.
+- Gross Profit.
+- Net Profit.
+- Total Business Capital.
+- Loan Liabilities.
+- Inventory Value.
+- Estimated Inventory Revenue.
+- Estimated Inventory Profit.
+- Total Investor Investment.
+- Total Investor Withdrawal.
+- Available Profit.
+- ROI.
+- Monthly Performance.
+
+Date filters:
+
+- Today.
+- Yesterday.
+- Last 7 Days.
+- Last 15 Days.
+- Last 30 Days.
+- Last 2 Months.
+- Last 3 Months.
+- Last 6 Months.
+- Current Year.
+- Previous Year.
+- Custom Date Range.
+
+Charts:
+
+- Daily Sales.
+- Monthly Sales.
+- Revenue vs Expenses.
+- Gross Profit vs Net Profit.
+- Purchase vs Sales.
+- Inventory Value.
+- Top Selling Products.
+- Top Profitable Products.
+- Most Damaged Products.
+- Warehouse Performance.
+- Delivery Performance.
+- Investor Capital.
+- Loan Repayment.
+- Profit Distribution.
+
+Investors must see business-wide reports only according to their authorized access.
+
+## 16.5 Inventory Potential Profit
+
+Calculate:
+
+- Current Inventory Cost.
+- Potential Selling Revenue.
+- Estimated Gross Profit.
+- Expiry Risk.
+- Damaged Inventory.
+- Clearance Stock.
+
+Clearly label these as unrealized estimates.
+
+Never add potential inventory profit to realized business profit.
+
+---
+
+# PART 17: ACCOUNTING AND FINANCIAL MANAGEMENT
+
+Implement a proper Double-Entry Accounting System from the beginning.
+
+Do not build accounting as simple income and expense lists.
+
+Use:
+
+- Chart of Accounts.
+- General Ledger.
+- Journal Entries.
+- Debit and Credit.
+- Trial Balance.
+- Profit and Loss.
+- Balance Sheet.
+- Cash Flow.
+- Accounts Receivable.
+- Accounts Payable.
+- Supplier Payments.
+- Investor Capital.
+- Loan Liabilities.
+- Payroll.
+- Expense Management.
+- Cash Reconciliation.
+
+Accounts should include:
+
+- Cash.
+- Bank.
+- Business Capital.
+- Investor Capital.
+- Loan Liability.
+- Supplier Payable.
+- Customer Receivable.
+- Sales Revenue.
+- Sales Returns.
+- Cost of Goods Sold.
+- Inventory.
+- Operating Expenses.
+- Salary Expenses.
+- Delivery Expenses.
+- Packaging Expenses.
+- Marketing Expenses.
+- Loan Financing Expenses.
+- Investor Profit Distribution / Payable, as appropriate.
+
+Every financial event must generate balanced journal entries.
+
+Important rules:
+
+1. Total Debit must equal Total Credit.
+2. Financial entries must not be silently deleted.
+3. Corrections must use reversal entries.
+4. Completed transactions must be immutable.
+5. Cash transfers must not create duplicate revenue.
+6. Loan principal repayment must reduce liability, not operating expenses.
+7. Profit-sharing distributions must not be confused with loan repayments.
+8. Customer sales and cash collections must be separately tracked.
+9. All reports must use the accounting ledger as their financial source of truth.
+10. Financial reports must be reconcilable with inventory and order records.
+
+## 17.1 Expense Management
+
+Expense categories:
+
+- Warehouse Rent.
+- Outlet Rent.
+- Employee Salary.
+- Delivery Salary.
+- Delivery Commission.
+- Transportation.
+- Packaging.
+- Electricity.
+- Internet.
+- Marketing.
+- Maintenance.
+- Equipment.
+- Other Expenses.
+
+Expense records:
+
+- Expense ID.
+- Category.
+- Amount.
+- Date.
+- Paid By.
+- Approved By.
+- Description.
+- Payment Method.
+- Attachment.
+- Accounting Entry.
+
+## 17.2 Cash Management
+
+Track cash separately for:
+
+- Delivery Men.
+- Admin.
+- Managers.
+- Warehouse.
+- Outlets.
+- Business Cash Accounts.
+
+Provide:
+
+- Daily Cash Summary.
+- Cash Collection.
+- Cash Handover.
+- Cash Reconciliation.
+- Cash Shortage.
+- Cash Surplus.
+- Pending Cash.
+- Cash Transaction History.
+
+---
+
+# PART 18: RETURN AND REFUND MANAGEMENT
+
+Implement a complete product return and refund workflow.
+
+Features:
+
+- Return Request.
+- Return Reason.
+- Order Reference.
+- Product Details.
+- Return Quantity.
+- Customer Information.
+- Product Inspection.
+- Return Approval.
+- Refund Amount.
+- Restock Decision.
+- Damage Decision.
+- Refund History.
+
+Returned products must not automatically return to sellable inventory.
+
+An authorized employee must inspect the returned products first.
+
+Depending on quality:
+
+- Restock.
+- Damaged Stock.
+- Quarantine.
+- Expired Stock.
+- Supplier Return.
+
+Refunds must create appropriate accounting entries.
+
+---
+
+# PART 19: BARCODE AND INVOICE MANAGEMENT
+
+Support barcode-based inventory operations.
+
+Features:
+
+- Product Barcode Generation.
+- Barcode Scanning.
+- SKU Management.
+- Purchase Invoice.
+- Supplier Invoice.
+- Sales Invoice.
+- Customer Invoice.
+- Return Invoice.
+- Stock Transfer Invoice.
+- Printable Invoice.
+- PDF Invoice.
+- Thermal Printer Support.
+
+Barcode scanning should work through compatible USB and mobile camera scanners where supported.
+
+Invoice numbering must be unique and configurable.
+
+---
+
+# PART 20: REPORT EXPORT
+
+Every important report must support:
+
+- PDF Export.
+- Excel Export.
+- CSV Export.
+- Print.
+
+Reports include:
+
+- Sales.
+- Purchases.
+- Inventory.
+- Supplier.
+- Customer.
+- Delivery.
+- Manager.
+- Investor.
+- Loan.
+- Profit.
+- Loss.
+- Expenses.
+- Salary.
+- Attendance.
+- Damage.
+- Expiry.
+- Return.
+- Cash Collection.
+- Cash Handover.
+- Warehouse.
+- Outlet.
+
+Support date filters and location filters.
+
+For large reports, use background or scheduled export generation where practical.
+
+Protect exported files with appropriate authorization.
+
+---
+
+# PART 21: REST API ARCHITECTURE
+
+Create a versioned REST API:
+
+`/api/v1/`
+
+API modules:
+
+- Authentication.
+- Customers.
+- Products.
+- Categories.
+- Search.
+- Cart.
+- Checkout.
+- Orders.
+- Wishlist.
+- Delivery.
+- Warehouse.
+- Purchase.
+- Inventory.
+- Accounting.
+- Manager.
+- Investor.
+- Reports.
+- Notifications.
+
+Use consistent JSON response structures.
+
+Implement:
+
+- API Authentication.
+- Secure API Tokens.
+- Token Expiration and Revocation.
+- Authorization.
+- Validation.
+- Rate Limiting.
+- Pagination.
+- API Versioning.
+- Error Handling.
+- API Documentation.
+
+Use PHP to implement the API without Laravel or an API framework.
+
+Store only hashed API tokens in the database.
+
+The API must support the future Android application.
+
+Keep the website and Android application connected to the same business logic and database.
+
+Do not duplicate business logic in API controllers.
+
+Use reusable service classes.
+
+---
+
+# PART 22: ANDROID APPLICATION
+
+Develop a separate Android application that uses the central PHP REST API.
+
+The Android application should support different user experiences based on role.
+
+## Customer Application
+
+- Registration.
+- Login.
+- Browse Products.
+- Search.
+- Categories.
+- Cart.
+- Guest Checkout.
+- Orders.
+- Order Tracking.
+- Wishlist.
+- Profile.
+
+## Delivery Man Application
+
+- Secure Login.
+- Assigned Orders.
+- Customer Details.
+- Delivery Address.
+- Direct Customer Order Creation.
+- Product Selection.
+- Delivery Status.
+- Cash Collection Status.
+- Customer Acquisition History.
+- Salary.
+- Commission.
+- Performance Dashboard.
+
+## Manager / Admin Mobile Access
+
+Provide responsive mobile access to the management dashboard.
+
+The Android application may be developed using native Android technology or another suitable frontend framework, but it must use the same REST API.
+
+Do not duplicate backend business logic inside Android.
+
+All critical calculations and permissions must remain on the PHP server.
+
+---
+
+# PART 23: GTM AND GA4 INTEGRATION
+
+Implement Google Tag Manager and GA4.
+
+Support ecommerce events:
+
+- view_item.
+- view_item_list.
+- search.
+- add_to_cart.
+- remove_from_cart.
+- view_cart.
+- begin_checkout.
+- add_shipping_info.
+- add_payment_info.
+- purchase.
+- login.
+- sign_up.
+- add_to_wishlist.
+
+Use correct ecommerce dataLayer structures.
+
+Send:
+
+- Product ID.
+- Product Name.
+- Category.
+- Quantity.
+- Price.
+- Currency.
+- Transaction ID.
+- Order Value.
+
+Ensure duplicate purchase events cannot occur.
+
+GTM ID and GA4 Measurement ID must be configurable through Admin Settings.
+
+Never expose internal business or investor information through analytics events.
+
+---
+
+# PART 24: NOTIFICATIONS
+
+Implement internal notifications for all roles.
+
+Admin:
+
+- New Orders.
+- New Direct Delivery Orders.
+- Purchase Requests.
+- Low Stock.
+- Expiry Alerts.
+- Damage Alerts.
+- Cash Collection.
+- Cash Handover.
+- Refund Requests.
+- Expense Approval.
+
+Manager:
+
+- Purchase Requests.
+- Stock Shortage.
+- New Tasks.
+- Payment Handover.
+- Employee Alerts.
+
+Delivery Man:
+
+- New Assigned Orders.
+- Customer Updates.
+- Delivery Changes.
+- Commission Updates.
+
+Investor:
+
+- New Investment.
+- Loan Repayment.
+- Profit Allocation.
+- Withdrawal Updates.
+- Monthly Reports.
+
+Prepare architecture for future email, SMS, WhatsApp and push notification integrations.
+
+---
+
+# PART 25: ROLE-BASED ACCESS CONTROL
+
+Roles:
+
+- Super Admin.
+- Admin.
+- Manager.
+- Warehouse Manager.
+- Delivery Man.
+- Accountant.
+- Investor.
+- Customer.
+
+Implement granular permission management.
+
+Examples:
+
+- View Products.
+- Create Products.
+- Edit Products.
+- Approve Purchases.
+- Receive Stock.
+- Adjust Stock.
+- View Orders.
+- Assign Delivery.
+- Collect Payment.
+- Approve Cash Handover.
+- View Financial Reports.
+- Manage Employees.
+- Manage Investors.
+- Approve Withdrawals.
+
+All authorization must happen on the PHP backend.
+
+Never rely on hiding frontend buttons as a security mechanism.
+
+Use location-based data access where applicable.
+
+---
+
+# PART 26: SECURITY REQUIREMENTS
+
+Security is a critical requirement.
+
+Implement:
+
+- `password_hash()` and `password_verify()`.
+- PDO Prepared Statements.
+- CSRF Protection.
+- XSS Protection.
+- SQL Injection Prevention.
+- IDOR Protection.
+- Broken Access Control Prevention.
+- Secure Session Management.
+- Session ID Regeneration After Login.
+- Secure Cookie Settings.
+- API Authentication.
+- API Rate Limiting.
+- Input Validation.
+- Output Escaping.
+- Secure File Upload.
+- MIME Verification.
+- File Size Limits.
+- Database Transactions.
+- Audit Logs.
+- Login Activity Logs.
+- Sensitive Action Verification.
+- Secure Error Handling.
+- Production Debug Disabled.
+- Environment Variable Protection.
+- Database Backups.
+- Restore Testing.
+
+For financial operations:
+
+- Prevent Duplicate Payments.
+- Prevent Duplicate Journal Entries.
+- Use Database Transactions.
+- Use Idempotency Keys where appropriate.
+- Lock relevant records during concurrent stock and payment operations.
+- Maintain immutable financial history.
+
+Never store passwords in plain text.
+
+Never expose sensitive investor, customer or employee data.
+
+Do not use string concatenation to build SQL queries from user input.
+
+Use prepared statements for all dynamic SQL values.
+
+# PART 27: UI/UX DESIGN REQUIREMENTS
+
+The complete website must have a premium, professional and modern appearance.
+
+## Public Website
+
+Design style:
+
+- Clean Grocery Branding.
+- White Background.
+- Fresh Green Primary Color.
+- Beautiful Product Images.
+- Modern Typography.
+- Professional Product Cards.
+- Responsive Layout.
+- Attractive Homepage.
+- Easy Checkout.
+- Smooth UI Interactions.
+
+## Admin and Manager Panels
+
+- Professional Sidebar.
+- Top Navigation.
+- Dashboard Cards.
+- Charts.
+- Tables.
+- Filters.
+- Search.
+- Pagination.
+- Notifications.
+- Activity Timeline.
+- Export Options.
+
+## Investor Panel
+
+- Premium Analytics Dashboard.
+- Financial Summary Cards.
+- Sales Charts.
+- Profit Charts.
+- Capital Tracking.
+- Investment Reports.
+- Withdrawal History.
+
+## Delivery Panel
+
+- Mobile-First Layout.
+- Large Action Buttons.
+- Simple Order Lists.
+- Fast Customer Order Entry.
+- Clear Payment Status.
+- Easy Navigation.
+
+Use Bootstrap 5 and minimal Vanilla JavaScript.
+
+The design must be attractive without unnecessary animations or heavy scripts.
+
+---
+
+# PART 28: DATABASE ARCHITECTURE
+
+Design a normalized relational MySQL database.
+
+Create appropriate tables for the following modules.
+
+## Authentication
+
+- users.
+- roles.
+- permissions.
+- role_permissions.
+- user_roles.
+- api_tokens.
+- login_logs.
+
+## Customers
+
+- customers.
+- customer_addresses.
+- wishlists.
+- wishlist_items.
+
+## Products
+
+- products.
+- categories.
+- brands.
+- units.
+- product_images.
+- product_attributes.
+- product_batches.
+
+## Suppliers
+
+- suppliers.
+- supplier_products.
+- supplier_payments.
+
+## Purchase
+
+- purchase_orders.
+- purchase_items.
+- goods_receipts.
+- goods_receipt_items.
+- purchase_expenses.
+
+## Warehouses
+
+- warehouses.
+- outlets.
+- stock_balances.
+- stock_movements.
+- stock_transfers.
+- stock_transfer_items.
+- stock_adjustments.
+- stock_adjustment_items.
+- stock_batches.
+- stock_reservations.
+
+## Fresh Produce
+
+- weight_entries.
+- sorting_records.
+- sorting_losses.
+- quality_inspections.
+- damage_records.
+- expiry_records.
+
+## Orders
+
+- orders.
+- order_items.
+- order_status_history.
+- delivery_assignments.
+- delivery_events.
+- delivery_collections.
+
+## Delivery
+
+- delivery_zones.
+- delivery_charges.
+- delivery_time_slots.
+- delivery_man_profiles.
+- delivery_commissions.
+- delivery_customers.
+
+## Returns
+
+- return_requests.
+- return_items.
+- return_inspections.
+- refunds.
+
+## Employees
+
+- employees.
+- attendance.
+- leaves.
+- salaries.
+- salary_advances.
+- salary_payments.
+- bonuses.
+
+## Accounting
+
+- chart_of_accounts.
+- financial_accounts.
+- journal_entries.
+- journal_entry_lines.
+- financial_transactions.
+- expenses.
+- cash_handover_records.
+- cash_reconciliations.
+
+## Investors
+
+- investors.
+- investment_accounts.
+- investments.
+- loans.
+- loan_repayments.
+- profit_allocations.
+- profit_distributions.
+- investor_withdrawals.
+- investment_agreements.
+
+## Marketing
+
+- coupons.
+- offers.
+- combos.
+- combo_items.
+- banners.
+
+## Content
+
+- blogs.
+- blog_categories.
+- pages.
+
+## System
+
+- notifications.
+- activity_logs.
+- audit_logs.
+- settings.
+- analytics_events.
+
+This is an initial logical table inventory, not a requirement to create every table blindly.
+
+Analyze relationships, normalization, transaction boundaries and indexing before finalizing the schema.
+
+Use appropriate:
+
+- Primary Keys.
+- Foreign Keys.
+- Unique Constraints.
+- Database Indexes.
+- DECIMAL Financial Columns.
+- Timestamps.
+- Soft Deletes where appropriate.
+
+Use version-controlled SQL migration files or a custom lightweight migration system written in PHP.
+
+Do not require Laravel migrations or Eloquent.
+
+# PART 29: BUSINESS RULES THAT MUST NEVER BE VIOLATED
+
+1. Cart operations must not reduce physical stock.
+2. Stock reservation and stock deduction must be separate.
+3. Every stock change must create a movement record.
+4. Every purchase must retain supplier and batch information.
+5. Historical order costs must never be silently recalculated.
+6. Delivery status and payment status must be separate.
+7. Delivered does not automatically mean paid.
+8. Cash collection must be verified.
+9. Cash handover must have sender and receiver confirmation.
+10. A delivery man's direct order must retain that delivery man's ID.
+11. A cancelled order must not generate normal delivery commission.
+12. Returned products must undergo inspection before restocking.
+13. Expired products must not be sold.
+14. Sorting loss must not be treated as a sale.
+15. Investor loan principal must not be treated as ordinary expenses.
+16. Loan repayments must not be confused with profit distributions.
+17. Profit-sharing capital must be separate from loan liabilities.
+18. Unrealized inventory profit must not be included in realized profit.
+19. Financial transactions must be auditable.
+20. Financial corrections must use reversal entries.
+21. Multiple warehouses must maintain separate stock.
+22. Stock transfers must not create or destroy inventory.
+23. All important operations must be permission-controlled.
+24. Reports must reconcile with their source transactions.
+
+# PART 30: DEVELOPMENT ROADMAP
+
+Develop the project in the following phases.
+
+## Phase 1: Foundation
+
+- PHP Project Setup.
+- Apache Configuration.
+- Environment Configuration.
+- Database Connection.
+- Custom Router.
+- Base Architecture.
+- Authentication.
+- Roles and Permissions.
+- Admin Dashboard Layout.
+
+## Phase 2: Product and Supplier
+
+- Categories.
+- Products.
+- Brands.
+- Units.
+- Suppliers.
+- Purchase Requests.
+- Purchase Orders.
+
+## Phase 3: Warehouse and Inventory
+
+- Warehouse Management.
+- Product Receiving.
+- Batch Management.
+- Stock Management.
+- Weight Management.
+- Sorting Loss.
+- Damage Management.
+- Expiry Management.
+- Stock Transfers.
+
+## Phase 4: E-commerce Website
+
+- Homepage.
+- Product Listing.
+- Product Details.
+- Search.
+- Cart.
+- Guest Checkout.
+- Customer Account.
+- Wishlist.
+
+## Phase 5: Order Management
+
+- Order Creation.
+- Order Processing.
+- Order Assignment.
+- Order Tracking.
+- Order History.
+- Cancellation.
+- Return and Refund.
+
+## Phase 6: Delivery Management
+
+- Delivery Man Accounts.
+- Delivery Dashboard.
+- Assigned Orders.
+- Direct Customer Order Creation.
+- Customer Acquisition.
+- Delivery Commission.
+
+## Phase 7: Payment and Cash Management
+
+- COD.
+- Payment Collection.
+- Cash Reconciliation.
+- Admin Handover.
+- Manager Handover.
+- Financial Transactions.
+
+## Phase 8: Manager and Employee Management
+
+- Manager Panel.
+- Employee Profiles.
+- Attendance.
+- Salary.
+- Advance.
+- Bonus.
+- Payroll.
+
+## Phase 9: Accounting
+
+- Chart of Accounts.
+- Double-Entry Accounting.
+- General Ledger.
+- Journal Entries.
+- Expenses.
+- Profit and Loss.
+- Balance Sheet.
+- Cash Flow.
+
+## Phase 10: Investor Management
+
+- Loan Management.
+- Loan Repayment.
+- Profit-Sharing Investment.
+- Profit Allocation.
+- Withdrawals.
+- Investor Dashboard.
+
+## Phase 11: Advanced Business Modules
+
+- Delivery Zones.
+- Barcode.
+- Invoices.
+- Combos.
+- Offers.
+- Blog.
+- Outlet Management.
+- Multiple Warehouses.
+- Multiple Locations.
+
+## Phase 12: API and Mobile Application
+
+- REST API.
+- API Documentation.
+- Android Application.
+- Customer App.
+- Delivery Man App.
+- Role-based Mobile Access.
+
+## Phase 13: Analytics and Reporting
+
+- GTM.
+- GA4.
+- Business Reports.
+- PDF Export.
+- Excel Export.
+- CSV Export.
+- Dashboard Charts.
+
+## Phase 14: Security and Deployment
+
+- Full Security Audit.
+- Automated Testing.
+- Performance Optimization.
+- Database Optimization.
+- Backup Configuration.
+- Production Deployment.
+- Final Documentation.
+
+# PART 31: TESTING REQUIREMENTS
+
+Write automated tests using suitable PHP testing tools or a lightweight custom test setup.
+
+Test:
+
+- Authentication.
+- Role Permissions.
+- Product Management.
+- Purchase Management.
+- Purchase Cost Calculation.
+- Batch Costing.
+- Vegetable Weight Calculation.
+- Sorting Loss.
+- Inventory Management.
+- Stock Reservations.
+- Stock Transfers.
+- Order Creation.
+- Guest Checkout.
+- Delivery Assignment.
+- Direct Delivery Orders.
+- Delivery Commission.
+- COD Collection.
+- Cash Handover.
+- Return and Refund.
+- Salary and Payroll.
+- Loan Repayment.
+- Profit Sharing.
+- Investor Withdrawal.
+- Double-Entry Accounting.
+- API Security.
+- Report Calculations.
+
+Test concurrent order processing and stock availability.
+
+Test duplicate payment prevention.
+
+Test financial reconciliation.
+
+Test authorization across all user roles.
+
+Do not claim a feature is complete until it has been tested.
+
+# PART 32: REQUIRED PROJECT DOCUMENTATION
+
+Create:
+
+1. README.md.
+2. Installation Guide.
+3. Database Schema.
+4. ERD Diagram.
+5. API Documentation.
+6. Business Workflow Documentation.
+7. Role and Permission Matrix.
+8. Accounting Rules Documentation.
+9. Inventory Calculation Documentation.
+10. Investor Financial Rules.
+11. Security Documentation.
+12. Testing Documentation.
+13. Backup and Restore Guide.
+14. Deployment Guide.
+15. Android API Integration Guide.
+
+---
+
+# PART 33: STRICT DEVELOPMENT INSTRUCTIONS FOR CLAUDE
+
+You are acting as a Senior Core PHP Developer, Senior Software Architect, Database Architect, ERP Developer and Security Engineer.
+
+The developer using this project knows Core PHP, PHP OOP, PDO, MySQL, HTML, CSS and Bootstrap, but does not know Laravel.
+
+Therefore, write code that is understandable and maintainable for a Core PHP developer.
+
+**Mandatory rules:**
+
+1. Use only Core PHP / Raw PHP for the backend.
+2. Never use Laravel or another PHP framework.
+3. Do not generate the entire project in one response.
+4. Do not skip business logic.
+5. Do not create only frontend screens with fake functionality.
+6. Do not use fake dashboard data in production.
+7. Do not hardcode product categories, prices, financial values or permissions.
+8. Do not put business calculations in JavaScript.
+9. Do not create insecure shortcuts.
+10. Do not delete or replace existing working code without analyzing its dependencies.
+11. Do not create incomplete placeholder implementations while claiming that a module is complete.
+12. Use PDO prepared statements.
+13. Use OOP and reusable PHP classes.
+14. Use transactions for operations involving multiple database changes.
+15. Explain unfamiliar PHP concepts before introducing them.
+16. Provide complete code for each file you create or modify.
+17. Always mention the exact file path before providing code.
+18. Explain where each file should be created.
+19. Explain how to configure and run the code in XAMPP.
+20. Do not assume I know Laravel commands or Laravel concepts.
+21. Avoid unnecessary packages and complicated technologies.
+22. Maintain a PROJECT_STATUS.md file to track completed and pending tasks.
+23. Maintain a DATABASE_SCHEMA.md file.
+24. Maintain a CHANGELOG.md file.
+25. Keep the architecture consistent throughout the project.
+
+For every module:
+
+1. Analyze its requirements.
+2. Define its database schema.
+3. Define relationships.
+4. Define business rules.
+5. Define backend services.
+6. Define controllers and routes.
+7. Define frontend screens.
+8. Define API endpoints where needed.
+9. Implement validation.
+10. Implement permissions.
+11. Implement error handling.
+12. Write automated tests.
+13. Review security.
+14. Test integration with previous modules.
+15. Update documentation.
+16. Explain how I can test the module locally.
+
+If a requirement is ambiguous, identify it and propose a safe business rule before implementing it.
+
+Use realistic Bangladesh-specific examples and BDT currency.
+
+Use Asia/Dhaka as the business timezone.
+
+Use appropriate localization for Bangla and English.
+
+Make the UI ready for both Bangla and English language support.
+
+# PART 34: FIRST TASK — ARCHITECTURE ONLY
+
+Before writing any application code, complete the following tasks:
+
+1. Analyze the entire project requirement.
+2. Propose the final Core PHP architecture.
+3. Design the complete database ERD.
+4. Provide the complete database table structure.
+5. Define all important table relationships.
+6. Define the role-permission matrix.
+7. Define the inventory and batch costing methodology.
+8. Define vegetable weight and sorting loss calculations.
+9. Define order and delivery workflows.
+10. Define payment collection and cash handover workflows.
+11. Define Double-Entry Accounting.
+12. Define the separate Loan and Profit-Sharing Investment models.
+13. Define the delivery salary and commission calculations.
+14. Define API architecture for the Android application.
+15. Define the development roadmap.
+16. Identify possible business and technical risks.
+17. Explain how the custom PHP router, PDO database layer, authentication and authorization will work.
+18. Explain how database migrations will be managed without Laravel.
+19. Explain how the project will be deployed on XAMPP and later on production hosting.
+
+Present the architecture and database design in a structured document.
+
+**Do not start coding until I review and approve the architecture.**
+
+After approval, implement one phase at a time.
+
+For every implementation step, provide:
+
+- File path.
+- Complete source code.
+- Database changes.
+- Explanation in simple language.
+- XAMPP setup instructions.
+- Testing instructions.
+- Expected result.
+
+If a step depends on a previous step, complete and verify that previous step first.
+
+Do not move to the next phase until the current phase works correctly.
+
+---
+
+# FINAL OBJECTIVE
+
+Build a complete, professional, secure and scalable Grocery E-commerce and Business Management ERP system using **Core PHP / Raw PHP, PDO and MySQL**, without Laravel or any other PHP framework.
+
+The system must manage purchasing, suppliers, warehouses, inventory, product costing, online sales, customer orders, delivery operations, employees, managers, accounting, loans, profit-sharing investments, multiple outlets and Android applications from one centralized platform.
+
+The final system must be suitable for real commercial operations, not just a demonstration project.
+
+**Remember: The entire backend must be written in Core PHP / Raw PHP. Laravel is strictly prohibited.**

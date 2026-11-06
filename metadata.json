@@ -1,0 +1,6 @@
+{
+  "name": "Hridoy Greens & Co. - Grocery E-Commerce & ERP System",
+  "description": "Hridoy Greens & Co. - Complete Fresh Grocery E-Commerce, Multi-Warehouse Inventory, Delivery & Business Management ERP for Bangladesh.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
